@@ -10,15 +10,53 @@ const bodyBackground = document.querySelector("body")
 const proyectos = document.querySelector(".proyectoss")
 const ingles = document.querySelector(".nivelIngles h3")
 const grados = document.querySelector(".temperatura .datos div h2")
+const hora = document.querySelector(".hora")
+const tempImg = document.querySelector(".imgTemp")
 
+const APIkey = "39d19eac955bc798e83d7f0bc5496d55"
+const lat = "-32.9595004"
+const long = "-60.6615415"
 
-
-const APIkey = "1af85e2a3dff54f33971ada62d308710"
-fetch(`http://api.weatherstack.com/current?access_key=${APIkey}&query=Rosario`)
+fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${APIkey}`)
     .then(el => el.json())
-    .then(res => console.log(
-        grados.innerHTML = `${res.current.temperature}º`
-    ))
+    .then(res => { 
+        const today = new Date()
+        let hour = today.getHours()
+        let minutes = today.getMinutes()
+        const weather = res.weather[0].main
+        let amPm 
+        console.log(res);
+        hour >= 19 ? amPm = "PM" : amPm = "AM"
+        if(minutes < 10){
+            minutes = `0${today.getMinutes()}`
+        }
+        if(hour < 10){
+            hour = `0${today.getHours()}`
+        }
+        grados.innerHTML = `${(res.main.temp - 273.15).toFixed(0)}°`
+        hora.innerHTML = `${hour}:${minutes} ${amPm}`
+        
+
+        switch (weather) {
+            case "Clear":
+                hour >= 19 ? tempImg.innerHTML = `<i class="bi bi-brightness-high grados"></i>` : tempImg.innerHTML = `<i class="bi bi-moon-stars grados"></i>`
+                break;
+            case "Rain":
+                tempImg.innerHTML = `<i class="bi bi-cloud-drizzle grados"></i>`
+                break;
+            case "Clouds":
+                hour >= 19 ? tempImg.innerHTML = `<i class="bi bi-cloud-moon grados"></i>` : tempImg.innerHTML = `<i class="bi bi-cloud-sun grados"></i>`
+                break;
+            case "Thunderstorm":
+                tempImg.innerHTML = `<i class="bi bi-cloud-lightning grados"></i>`
+                break;
+            case "Snow":
+                tempImg.innerHTML = `<i class="bi bi-snow grados"></i>`
+            default:
+                tempImg.innerHTML = `<i class="bi bi-cloud-haze2 grados"></i>`
+                break;
+        }
+})
 
 grados.innerHTML
 idioma.addEventListener("click", () => {
@@ -38,7 +76,7 @@ idioma.addEventListener("click", () => {
 
     edad.innerHTML === "Años" ? edad.innerHTML = "Years Old" : edad.innerHTML = "Años"
     proyectos.innerHTML === "Proyectos" ? proyectos.innerHTML = "Projects" : proyectos.innerHTML = "Proyectos"
-    ingles.innerHTML === "Nivel de ingles" ? ingles.innerHTML = "English level" : ingles = "Nivel de ingles"
+    ingles.innerHTML === "Nivel de ingles" ? ingles.innerHTML = "English level" : ingles.innerHTML = "Nivel de ingles"
 
 }
 )

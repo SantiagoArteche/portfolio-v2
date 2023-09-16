@@ -258,6 +258,17 @@
      box-shadow: 0px 0px 17px 8px #9b8506ee;
  }
 
+ .luna{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100px;
+    width: 100px;
+    box-shadow: -15px 15px 0 5px white  ;
+    border-radius: 50%;
+ }
+
  .sol i:nth-child(1) {
      font-size: 4rem;
      top: 65%;
