@@ -17,7 +17,7 @@ goOutChatBot.addEventListener("click", () => {
 
 let userMessage
 
-fetch("./js/recentlyTracks.json")
+fetch("./src/js/recentlyTracks.json")
     .then((response) => response.json())
     .then((data) => {
     const API_KEY = data[0].apikey
