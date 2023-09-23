@@ -17,7 +17,7 @@ goOutChatBot.addEventListener("click", () => {
 
 let userMessage
 
-const API_KEY = "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"
+const API_KEY = "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"
 
 
 const createChatLi = (message, className) => {
