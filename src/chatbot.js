@@ -17,10 +17,12 @@ goOutChatBot.addEventListener("click", () => {
 
 let userMessage
 
-fetch("./src/recentlyTracks.json")
+fetch("../recentlyTracks.json")
 .then((el) => el.json())
 .then((data) => {
     const API_KEY = data[0].apikey
+
+    console.log(API_KEY);
 
     const createChatLi = (message, className) => {
         const chatLi = document.createElement("li")
