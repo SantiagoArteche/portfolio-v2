@@ -17,62 +17,70 @@ goOutChatBot.addEventListener("click", () => {
 
 let userMessage
 
-const API_KEY = "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"
+fetch("./src/recentlyTracks.json")
+.then((el) => el.json())
+.then((data) => {
+    const API_KEY = data[0].apikey
 
-
-const createChatLi = (message, className) => {
-    const chatLi = document.createElement("li")
-    chatLi.classList.add("chat", className)
-    let chatContent = className === "sendMes" ? `<p class="m-0 my-2 bg-primary p-3 fs-5 rounded-4 text-light">${message}</p>`: `<p class="my-2 bg-success p-3 fs-5 rounded-4 text-light">${message}</p>`
-    chatLi.innerHTML = chatContent
-    return chatLi
-    
-}
-
-const generateResponse = (chatMesLi) => {
-    const API_URL = "https://api.openai.com/v1/chat/completions"
-
-    const messageElement = chatMesLi.querySelector("p")
-
-    const requestOptions = {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${API_KEY}`
-        },
-        body: JSON.stringify({
-            model: "gpt-3.5-turbo",
-    messages: [ { role: "user", content: userMessage} ]
-        })
-
+    const createChatLi = (message, className) => {
+        const chatLi = document.createElement("li")
+        chatLi.classList.add("chat", className)
+        let chatContent = className === "sendMes" ? `<p class="m-0 my-2 bg-primary p-3 fs-5 rounded-4 text-light">${message}</p>`: `<p class="my-2 bg-success p-3 fs-5 rounded-4 text-light">${message}</p>`
+        chatLi.innerHTML = chatContent
+        return chatLi
+        
     }
-    fetch(API_URL, requestOptions)
-    .then(res => res.json())
-    .then(data => { 
-        messageElement.textContent = data.choices[0].message.content
-        console.log(data.choices[0].message.content);
-    })
-    .catch((error) => {
-        messageElement.textContent = "Algo salio mal, intenta de nuevo"
-    })
-}
-
-const handleChat = () => {
-    userMessage = messageSend.value.trim()
     
-    if(!userMessage) return
-
-    chatBox.appendChild(createChatLi(userMessage, "sendMes"))
-
-    setTimeout(() => {
-        const chatMesLi = createChatLi("Thinking...", "chatMes")
-        chatBox.appendChild(chatMesLi)
-        generateResponse(chatMesLi)
-    }, 600)
-}
-
-form.addEventListener("submit", (e) => {
-    e.preventDefault()
-    handleChat()
-    e.target.reset()
+    const generateResponse = (chatMesLi) => {
+        const API_URL = "https://api.openai.com/v1/chat/completions"
+    
+        const messageElement = chatMesLi.querySelector("p")
+    
+        const requestOptions = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${API_KEY}`
+            },
+            body: JSON.stringify({
+                model: "gpt-3.5-turbo",
+        messages: [ { role: "user", content: userMessage} ]
+            })
+    
+        }
+        fetch(API_URL, requestOptions)
+        .then(res => res.json())
+        .then(data => { 
+            messageElement.textContent = data.choices[0].message.content
+            console.log(data.choices[0].message.content);
+        })
+        .catch((error) => {
+            messageElement.textContent = "Algo salio mal, intenta de nuevo"
+        })
+    }
+    
+    const handleChat = () => {
+        userMessage = messageSend.value.trim()
+        
+        if(!userMessage) return
+    
+        chatBox.appendChild(createChatLi(userMessage, "sendMes"))
+    
+        setTimeout(() => {
+            const chatMesLi = createChatLi("Thinking...", "chatMes")
+            chatBox.appendChild(chatMesLi)
+            generateResponse(chatMesLi)
+        }, 600)
+    }
+    
+    form.addEventListener("submit", (e) => {
+        e.preventDefault()
+        handleChat()
+        e.target.reset()
+    })
+   
 })
+
+
+
+
