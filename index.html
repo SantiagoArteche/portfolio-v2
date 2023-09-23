@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nicolas Tomas | Front-End Developer</title>
+    <title>Santiago Arteche | Front-End Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,600;1,200;1,400&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../src/css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
@@ -20,13 +20,12 @@
 
 </head>
 
-<body>
-
+<body class="darkMode">
     <div class="bgNoise"></div>
     <div class="grid-container justify-content-center">
         <!-- DESCRIPCION -->
-        <div class="descripcion rounded-4 text-light">
-            <h1 class="text-start ms-3">Hola soy Orlando</h1>
+        <div class="descripcion rounded-4 text-light d-flex flex-column justify-content-end align-items-start">
+            <h1 class="text-start ms-3">Hola soy Santiago</h1>
             <p class="fs-3 ms-3 present"> Soy desarrollador frontend con experiencia en React. Soy bueno en CSS y HTML,
                 así
                 como
@@ -40,115 +39,130 @@
         <div class="idioma rounded-4 d-flex flex-column justify-content-center align-items-center text-light">
             <h1 class="fw-bold spanish">ES</h1>
             <div class="d-flex flex-row justify-content-center w-100">
-                <h4 class="fw-bold me-3 english">EN</h4>
-                <h4 class="fw-bold text-black spanishB">ES</h4>
+                <h4 class="fw-bold text-black me-3 english">EN</h4>
+                <h4 class="fw-bold spanishB">ES</h4>
             </div>
         </div>
         <!-- DIA - NOCHE -->
 
         <div class="diaNoche rounded-4">
             <div class="form-check form-switch h-100 w-100 d-flex justify-content-center align-items-center">
-                <input class="form-check-input " type="checkbox" role="switch" id="flexSwitchCheckDefault ">
-                <label class="form-check-label  " for="flexSwitchCheckDefault"></label>
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault ">
+                <label class="form-check-label" for="flexSwitchCheckDefault"></label>
             </div>
         </div>
         <!-- EDAD -->
         <div class="edad rounded-4 d-flex flex-column justify-content-center align-items-center text-black">
-            <div class="fw-bold">20</div>
+            <div class="fw-bold">25</div>
             <h3 class="fw-bold">Años</h3>
         </div>
         <!-- LINKEDIN -->
-        <a href="https://www.linkedin.com/in/nicolas-tomas-b84596254/"
-            class="linkedin rounded-4 d-flex justify-content-center align-items-center text-decoration-none"
+        
+        <a href="https://www.linkedin.com/in/santiago-arteche-200a8a258/"
+            class="linkedin rounded-4 d-flex text-decoration-none"
             target="_blank">
-
-            <i class="fa-brands fa-linkedin-in"></i>
-
+            <i class="fa-brands fa-linkedin-in align-self-center text-center ms-3 w-100"></i>
+            <i class="fa-solid fa-arrow-up-right-from-square text-light align-self-start"></i>
         </a>
 
         <!-- PROYECTOS -->
         <a href=" ./proyectos.html" class="proyectos rounded-4 text-decoration-none">
-            <div>
+            <div class="d-flex flex-row justify-content-between">
                 <h2 class="text-light proyectoss ms-3 mt-2 ">Proyectos</h2>
+                <i class="fa-solid fa-arrow-up-right-from-square text-light"></i>
             </div>
         </a>
 
         <!-- GITHUB -->
-        <a href="https://github.com/NicolasTomas" class="github rounded-4 text-decoration-none" target="_blank">
+        <a href="https://github.com/SantiagoArteche" class="github rounded-4 text-decoration-none d-flex flex-row justify-content-between" target="_blank">
             <h2 class="text-light ms-3 mt-2 ">Github</h2>
+            <i class="fa-solid fa-arrow-up-right-from-square text-light"></i>
         </a>
 
 
         <!-- TECNOLOGIAS -->
         <div class="tecnologia rounded-4 d-flex flex-row flex-wrap justify-content-between p-4">
-
-            <div class="d-flex flex-row justify-content-between w-100">
-                <i class="fa-brands fa-html5" style="color: #000000;">
-                </i><i class="fa-brands fa-sass d-flex justify-content-end" style="color: #000000;"></i>
-            </div>
-            <div class=" d-flex flex-row justify-content-between align-items-center w-100"><i
-                    class="fa-brands fa-css3-alt me-1" style="color: #000000;"></i><i
-                    class="bi bi-bootstrap-fill text-black d-flex justify-content-center"></i><i
-                    class="fa-brands fa-git-alt ms-2 d-flex justify-content-end" style="color: #000000;"></i>
-            </div>
-            <div><i class="fa-brands fa-js" style="color: #000000;"></i></div>
-            <div><i class="fa-brands fa-github  d-flex justify-content-end" style="color: #000000;"></i></div>
+            TECNOLOGIAS
         </div>
         <!-- WHATSAPP -->
-        <a href="https://wa.me/3415020551" class="whatsapp rounded-4 text-decoration-none">
-
-            <i class="bi bi-whatsapp"></i>
+        <a href="https://wa.me/3413650110" class="whatsapp rounded-4 text-decoration-none d-flex flex-row justify-content-between">
+            <i class="bi bi-whatsapp text-center ms-3 w-100"></i>
+            <i class="fa-solid fa-arrow-up-right-from-square text-light align-self-start"></i>
         </a>
 
         <!-- MAIL -->
-        <a href="mailto:nicolastomas328@gmail.com"
-            class="mail rounded-4 d-flex justify-content-center align-items-center text-decoration-none">
-            <i class="fa-regular fa-envelope text-black"></i>
+        <a href="mailto:santiarteche@hotmail.com"
+            class="mail rounded-4 d-flex justify-content-between  text-decoration-none">
+            <i class="fa-regular fa-envelope text-black w-100 ms-3 align-self-center text-center"></i>
+            <i class="fa-solid fa-arrow-up-right-from-square text-light align-self-start"></i>
         </a>
         <!-- TEMPERATURA -->
-        <div class="temperatura rounded-4">
+        <div class="temperatura rounded-4 temp">
             <div class="soleado d-flex justify-content-between align-items-center">
                 <div class="datos d-flex flex-column justify-content-center text-light ms-3 ">
                     <div class=" fw-bold d-flex flex-row align-items-center">
                         <h2 class="grados me-3"></h2> <div class="imgTemp"></div>
                     </div>
-                    <h4 class="hora fs-3">07:00 PM</h4>
+                    <h4 class="hora fs-3"></h4>
                     <h4 class="ubicacion fs-3">Rosario, Santa Fe, Arg.</h4>
                 </div>
-                <div class="sol d-flex justify-content-end me-2 mt-2">
+                <div class="sol d-flex sunMoon justify-content-end me-2 mt-2">
                     <i class="fa-solid fa-cloud fa-2xl text-light"></i>
                 </div>
-                <div></div>
+                
             </div>
         </div>
         <!-- NIVEL DE INGLES -->
-        <div class="nivelIngles rounded-4 d-flex flex-column justify-content-center align-items-center text-black">
-            <div class="fw-bold">A2+</div>
-            <h3>Nivel de ingles</h3>
-
-        </div>
+        <a href="https://www.efset.org/cert/biWFFB" class="nivelIngles text-decoration-none rounded-4 d-flex flex-row justify-content-between align-items-center text-black">
+            <div class="text-center w-100 ms-3"><div class="fw-bold text-center">C1</div>
+            <h3>Nivel de ingles</h3></div>
+            <i class="fa-solid fa-arrow-up-right-from-square text-light align-self-start"></i>
+            
+            </a>
+       
         <!-- CERTIFICACION -->
-        <div class="certificacion rounded-4 d-flex justify-content-center align-items-center">
-            <h2 class="text-black fs-1 fw-bold"> Desarrollador Full-Stack </h2>
-        </div>
+        <a href="https://www.coderhouse.com/certificados/64b25eb5c4c45b00029c544b" class="certificacion rounded-4 d-flex justify-content-between align-items-center text-decoration-none">
+            <h2 class="text-black text-center w-100 ms-3 fs-1 fw-bold">Desarrollador Front-End</h2>
+            <i class="fa-solid fa-arrow-up-right-from-square text-light align-self-start"></i>
+        </a>
         <!-- SPOTIFY -->
-        <div class="spotify rounded-4">spotify</div>
-        <!-- CHATBOT -->
-        <div class="chatbot rounded-4 d-flex justify-content-center align-items-center ">
+        <div class="spotify rounded-4 d-flex flex-column align-items-center justify-content-around">
+            <h4 class="text-center">Recientemente escuchado</h4>
+            <i class="fa-brands fa-spotify"></i>
+            <div class="reproductor"></div>
+            <div class="songName"></div>
+        </div>
+        <!-- CHATBOT CONTAINER-->
+        <div class="chatbotContainer rounded-4 d-flex justify-content-center align-items-center ">
             <div class="rounded-circle d-flex justify-content-center align-items-center flux">
                 <i class="bi bi-robot text-light"></i>
             </div>
         </div>
 
+        <!-- INTERACTUAR CHATBOT-->
+        <div class="chatBot rounded-4 disabled bg-black p-3 align-content-center flex-column">
+            <div class="d-flex flex-row justify-content-between border-bottom border-3 border-light"><h2 class=" text-light p-0  pb-3">Santiago Arteche Bot</h2><i class="fa-solid fa-circle-xmark text-primary fs-3"></i></div>
+            
+            <div class="mesCont border-bottom border-3 border-primary mt-2">
+                <ul class="list-unstyled chatBox"><li class="text-light chatMes"><p class="my-2 bg-success p-3 fs-5 rounded-4 text-light">Hola, soy el clon de Santiago, que te gustaria saber? </p></li>
+                </ul>
+            </div>
+            
+            <form id="chatForm" class="d-flex align-self-center w-100 rounded-bottom-4">
+            <textarea name="textArea" id="textArea" placeholder="Inserte su pregunta..." required class="bg-transparent border-0 p-2 align-self-start text-light"  form="chatForm" ></textarea>
+            <button type="submit" class="col-2 border-0 bg-transparent rounded-bottom-4 rounded-start-0"><i class="fa-solid fa-paper-plane "></i></button></form>
+        </div>
+
     </div>
-
-
-
-    <script src="./index.js"></script>
+  
+   
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
-
+       
+        <script src="./src/index.js"></script>
+        <script src="./src/chatbot.js"></script>
 </body>
 
 </html>
