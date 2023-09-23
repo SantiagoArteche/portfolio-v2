@@ -17,9 +17,9 @@ goOutChatBot.addEventListener("click", () => {
 
 let userMessage
 
-fetch("../../recentlyTracks.json")
-.then((el) => el.json())
-.then((data) => {
+fetch("./js/recentlyTracks.json")
+    .then((response) => response.json())
+    .then((data) => {
     const API_KEY = data[0].apikey
 
     const createChatLi = (message, className) => {
@@ -78,7 +78,6 @@ fetch("../../recentlyTracks.json")
         handleChat()
         e.target.reset()
     })
-   
 })
 
 
