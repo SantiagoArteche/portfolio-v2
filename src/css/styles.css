@@ -35,10 +35,10 @@
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(4, 18rem) ;
+    grid-template-columns: repeat(4, 18.8rem) ;
     grid-template-rows: repeat(6, 16rem);
     margin: 6.25rem 5rem 6.25rem 5rem;
-    gap: 0.95rem;
+    gap: 1.2rem;
 }
 
  .descripcion {

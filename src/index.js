@@ -34,7 +34,7 @@ fetch(
         let minutes = today.getMinutes();
         const weather = res.weather[0].main;
         let amPm;
-        const night = ["19", "20", "21", "22", "23", "24", "01", "02", "03", "04", "05", "06"];
+        const night = ["19", "20", "21", "22", "23", "24", "00", "01", "02", "03", "04", "05", "06"];
 
         hour >= 12 ? (amPm = "PM") : (amPm = "AM");
 
